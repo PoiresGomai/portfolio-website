@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeke Zikey - Resume</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- html2pdf library for PDF conversion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Resume-specific CSS -->
+    <link href="css/resume-styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-text">ZZ</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link resume-btn active" href="resume.html">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Resume Content -->
+    <section class="resume-section">
+        <div class="container">
+            <div class="download-container mb-4 text-end" data-aos="fade-in">
+                <a href="#" class="btn btn-primary btn-download" id="downloadResume">
+                    <i class="fas fa-download"></i> Download PDF
+                </a>
+            </div>
+
+            <div class="resume-container" id="resumeContent">
+                <div class="row">
+                    <!-- Left Sidebar -->
+                    <div class="col-lg-4 resume-sidebar" data-aos="fade-right">
+                        <div class="sidebar-container">
+                            <!-- Profile Section -->
+                            <div class="profile-section">
+                                <div class="profile-image">
+                                    <img src="images/profile-small.jpg" alt="Zeke Zikey" class="rounded-circle">
+                                </div>
+                                <h1 class="profile-name">Zeke Zikey</h1>
+                                <h2 class="profile-title">Software Engineer & AI Specialist</h2>
+                                <div class="profile-divider"></div>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="sidebar-section contact-section">
+                                <h3 class="sidebar-title">Contact</h3>
+                                <ul class="contact-list">
+                                    <li>
+                                        <div class="icon-container">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div class="contact-info">
+                                            <span class="contact-label">Email</span>
+                                            <span class="contact-value">contact@bizkeyz.com</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon-container">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div class="contact-info">
+                                            <span class="contact-label">Location</span>
+                                            <span class="contact-value">Beijing, China</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon-container">
+                                            <i class="fas fa-globe"></i>
+                                        </div>
+                                        <div class="contact-info">
+                                            <span class="contact-label">Website</span>
+                                            <span class="contact-value">bizkeyz.com</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon-container">
+                                            <i class="fab fa-github"></i>
+                                        </div>
+                                        <div class="contact-info">
+                                            <span class="contact-label">GitHub</span>
+                                            <span class="contact-value">PoiresGomai</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Soft Skills Section -->
+                            <div class="sidebar-section soft-skills-section">
+                                <h3 class="sidebar-title">Soft Skills</h3>
+                                <div class="sidebar-skills-list">
+                                    <div class="sidebar-skill-item">
+                                        <div class="skill-icon">
+                                            <i class="fas fa-comments"></i>
+                                        </div>
+                                        <div class="skill-name">Communication</div>
+                                    </div>
+                                    
+                                    <div class="sidebar-skill-item">
+                                        <div class="skill-icon">
+                                            <i class="fas fa-lightbulb"></i>
+                                        </div>
+                                        <div class="skill-name">Problem Solving</div>
+                                    </div>
+                                    
+                                    <div class="sidebar-skill-item">
+                                        <div class="skill-icon">
+                                            <i class="fas fa-sync-alt"></i>
+                                        </div>
+                                        <div class="skill-name">Adaptability</div>
+                                    </div>
+                                    
+                                    <div class="sidebar-skill-item">
+                                        <div class="skill-icon">
+                                            <i class="fas fa-chalkboard-teacher"></i>
+                                        </div>
+                                        <div class="skill-name">Mentoring</div>
+                                    </div>
+                                    
+                                    <div class="sidebar-skill-item">
+                                        <div class="skill-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="skill-name">Teamwork</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Languages Section -->
+                            <div class="sidebar-section languages-section">
+                                <h3 class="sidebar-title">Languages</h3>
+                                <div class="language-bars">
+                                    <div class="language-item">
+                                        <div class="language-info">
+                                            <span class="language-name">Chinese</span>
+                                            <span class="language-level">HSK5 Certified</span>
+                                        </div>
+                                        <div class="language-progress">
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 90%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="language-item">
+                                        <div class="language-info">
+                                            <span class="language-name">English</span>
+                                            <span class="language-level">Proficient</span>
+                                        </div>
+                                        <div class="language-progress">
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 85%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="language-item">
+                                        <div class="language-info">
+                                            <span class="language-name">French</span>
+                                            <span class="language-level">Native</span>
+                                        </div>
+                                        <div class="language-progress">
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 100%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="language-item">
+                                        <div class="language-info">
+                                            <span class="language-name">Italian</span>
+                                            <span class="language-level">Intermediate</span>
+                                        </div>
+                                        <div class="language-progress">
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 60%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Interests Section -->
+                            <div class="sidebar-section interests-section">
+                                <h3 class="sidebar-title">Interests</h3>
+                                <div class="interest-items">
+                                    <div class="interest-item">
+                                        <i class="fas fa-edit"></i>
+                                        <span>Documentation</span>
+                                    </div>
+                                    <div class="interest-item">
+                                        <i class="fas fa-futbol"></i>
+                                        <span>Football</span>
+                                    </div>
+                                    <div class="interest-item">
+                                        <i class="fas fa-music"></i>
+                                        <span>Music</span>
+                                    </div>
+                                    <div class="interest-item">
+                                        <i class="fas fa-robot"></i>
+                                        <span>AI Innovation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="col-lg-8 resume-main" data-aos="fade-left">
+                        <!-- Professional Summary -->
+                        <div class="resume-block">
+                            <h2 class="block-title">Professional Summary</h2>
+                            <p>
+                                An international student from the Republic of the Congo with a strong academic and technical background in Computer Science,
+                                Artificial Intelligence, Data Science, and Software Engineering. I have completed my Bachelor's degree in
+                                Computer Science and Technology at Beihang University (Beijing Aerospace University), one of China's top 
+                                institutions for engineering and technology.
+                            </p>
+                        </div>
+
+                        <!-- Education Section -->
+                        <div class="resume-block">
+                            <h2 class="block-title">Education</h2>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-header">
+                                            <h3>Bachelor's Degree in Computer Science and Technology</h3>
+                                            <span class="timeline-period">September 2020 – June 2024</span>
+                                        </div>
+                                        <h4 class="timeline-subtitle">Beihang University, Beijing, China</h4>
+                                        <div class="timeline-description">
+                                            <p><strong>Key Courses:</strong> Algorithms, Databases, Object-Oriented Programming, Operating Systems, Machine Learning, Deep Learning</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-header">
+                                            <h3>HSK Chinese Language & Cultural Studies</h3>
+                                            <span class="timeline-period">September 2019 – July 2020</span>
+                                        </div>
+                                        <h4 class="timeline-subtitle">Huaqiao University, Xiamen, China</h4>
+                                        <div class="timeline-description">
+                                            <p><strong>Focus:</strong> Chinese language proficiency (currently certified as HSK5, score: 207), cultural understanding, mathematics, and physics.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-header">
+                                            <h3>High School Diploma</h3>
+                                            <span class="timeline-period">Graduated 2019</span>
+                                        </div>
+                                        <h4 class="timeline-subtitle">Victor Augagneur High School, Brazzaville, Republic of the Congo</h4>
+                                        <div class="timeline-description">
+                                            <p><strong>Field:</strong> Science and Mathematics</p>
+                                            <p><strong>Achievements:</strong> Consistently ranked among the top students, developed strong foundations in math, physics, and computer science.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Skills Section -->
+                        <div class="resume-block">
+                            <h2 class="block-title">Technical Skills</h2>
+                            
+                            <div class="skills-container">
+                                <div class="skills-category">
+                                    <h3 class="category-title">
+                                        <i class="fas fa-code"></i>
+                                        Programming Languages
+                                    </h3>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Java</span>
+                                        <span class="skill-tag">JavaScript</span>
+                                        <span class="skill-tag">Python</span>
+                                        <span class="skill-tag">Ruby</span>
+                                        <span class="skill-tag">C/C++</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skills-category">
+                                    <h3 class="category-title">
+                                        <i class="fas fa-laptop-code"></i>
+                                        Web Development
+                                    </h3>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">HTML, CSS, Bootstrap</span>
+                                        <span class="skill-tag">WordPress</span>
+                                        <span class="skill-tag">Django</span>
+                                        <span class="skill-tag">Ruby on Rails</span>
+                                        <span class="skill-tag">Next.js</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skills-category">
+                                    <h3 class="category-title">
+                                        <i class="fas fa-database"></i>
+                                        Databases
+                                    </h3>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">SQL</span>
+                                        <span class="skill-tag">Relational database design</span>
+                                        <span class="skill-tag">Query optimization</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skills-category">
+                                    <h3 class="category-title">
+                                        <i class="fas fa-brain"></i>
+                                        AI & Machine Learning
+                                    </h3>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">TensorFlow</span>
+                                        <span class="skill-tag">Machine learning fundamentals</span>
+                                        <span class="skill-tag">Deep learning</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skills-category">
+                                    <h3 class="category-title">
+                                        <i class="fas fa-tools"></i>
+                                        Development Tools
+                                    </h3>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Git / GitHub</span>
+                                        <span class="skill-tag">CLion, PyCharm, VS Code</span>
+                                        <span class="skill-tag">Linux environment</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skills-category">
+                                    <h3 class="category-title">
+                                        <i class="fas fa-paint-brush"></i>
+                                        Design & Communication
+                                    </h3>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Microsoft Office Suite</span>
+                                        <span class="skill-tag">Graphic Design tools</span>
+                                        <span class="skill-tag">Video editing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Work Experience Section -->
+                        <div class="resume-block">
+                            <h2 class="block-title">Work Experience</h2>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-header">
+                                            <h3>Freelance Web Developer & Digital Marketing Specialist</h3>
+                                            <span class="timeline-period">February 2021 – September 2023</span>
+                                        </div>
+                                        <div class="timeline-description">
+                                            <p><strong>Responsibilities:</strong></p>
+                                            <ul>
+                                                <li>Developed and optimized websites for clients</li>
+                                                <li>Designed digital marketing strategies to increase online visibility and user engagement</li>
+                                                <li>Collaborated closely with clients to understand their business goals and deliver tailored solutions</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-header">
+                                            <h3>Mathematics & Physics Tutor</h3>
+                                            <span class="timeline-period">December 2023 – October 2024</span>
+                                        </div>
+                                        <div class="timeline-description">
+                                            <p><strong>Responsibilities:</strong></p>
+                                            <ul>
+                                                <li>Provided personalized instruction to help students improve their performance</li>
+                                                <li>Developed effective teaching strategies based on individual learning needs</li>
+                                                <li>Improved students' comprehension and confidence in key STEM subjects</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projects Section -->
+                        <div class="resume-block">
+                            <h2 class="block-title">Projects & Practical Experience</h2>
+                            <div class="projects-grid">
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <h3>Network Intrusion Detection System</h3>
+                                    </div>
+                                    <div class="project-tags">
+                                        <span class="project-tag">Python</span>
+                                        <span class="project-tag">TensorFlow</span>
+                                        <span class="project-tag">AI</span>
+                                    </div>
+                                    <p>Built using Python and TensorFlow, focused on enhancing model accuracy through multi-feature fusion techniques.</p>
+                                </div>
+
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <h3>Student Course Management System</h3>
+                                    </div>
+                                    <div class="project-tags">
+                                        <span class="project-tag">Python</span>
+                                        <span class="project-tag">Django</span>
+                                    </div>
+                                    <p>Developed with Python and Django framework, designed to automate course registration and improve data management.</p>
+                                </div>
+
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <h3>Library Management System</h3>
+                                    </div>
+                                    <div class="project-tags">
+                                        <span class="project-tag">Ruby</span>
+                                        <span class="project-tag">Rails</span>
+                                    </div>
+                                    <p>Created using Ruby on Rails, streamlined book lending and inventory tracking processes.</p>
+                                </div>
+
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <h3>Compiler Construction Project</h3>
+                                    </div>
+                                    <div class="project-tags">
+                                        <span class="project-tag">Java</span>
+                                        <span class="project-tag">System Design</span>
+                                    </div>
+                                    <p>Implemented using Java, provided hands-on experience in programming languages and system design.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Career Goals Section -->
+                        <div class="resume-block">
+                            <h2 class="block-title">Research Interests & Career Goals</h2>
+                            <p>
+                                Deeply passionate about Artificial Intelligence, Big Data, and Software Engineering. I believe in using technology 
+                                to solve real-world problems, particularly in areas like cybersecurity, education, and sustainable development.
+                            </p>
+                            <p><strong>Long-term vision:</strong></p>
+                            <div class="vision-cards">
+                                <div class="vision-card">
+                                    <div class="vision-icon">
+                                        <i class="fas fa-city"></i>
+                                    </div>
+                                    <p>Returning to Congo to help modernize government systems by introducing digital infrastructure and data-driven decision-making</p>
+                                </div>
+                                <div class="vision-card">
+                                    <div class="vision-icon">
+                                        <i class="fas fa-heartbeat"></i>
+                                    </div>
+                                    <p>Developing AI-based tools for healthcare, logistics, and resource management</p>
+                                </div>
+                                <div class="vision-card">
+                                    <div class="vision-icon">
+                                        <i class="fas fa-code-branch"></i>
+                                    </div>
+                                    <p>Contributing to open-source initiatives and collaborating on global tech challenges</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>© 2024 Zeke Zikey. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Designed with <i class="fas fa-heart"></i> by Zeke Zikey</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+    
+    <!-- PDF Download Script -->
+    <script>
+        document.getElementById('downloadResume').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Hide elements that should not be in the PDF
+            const elementsToPrint = document.getElementById('resumeContent');
+            const navbar = document.querySelector('.navbar');
+            const footer = document.querySelector('.footer');
+            const backToTop = document.querySelector('.back-to-top');
+            const downloadBtn = document.querySelector('.download-container');
+            
+            // Store original display values
+            const navbarDisplay = navbar.style.display;
+            const footerDisplay = footer.style.display;
+            const backToTopDisplay = backToTop.style.display;
+            const downloadBtnDisplay = downloadBtn.style.display;
+            
+            // Hide elements for PDF generation
+            navbar.style.display = 'none';
+            footer.style.display = 'none';
+            backToTop.style.display = 'none';
+            downloadBtn.style.display = 'none';
+            
+            // Set options for PDF
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5],
+                filename: 'Zeke_Zikey_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: {
