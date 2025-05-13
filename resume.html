@@ -73,7 +73,7 @@
                             <!-- Profile Section -->
                             <div class="profile-section">
                                 <div class="profile-image">
-                                    <img src="images/profile-small.jpg" alt="Zeke Zikey" class="rounded-circle">
+                                    <img src="images/projects/profile-small.jpg" alt="Zeke Zikey" >
                                 </div>
                                 <h1 class="profile-name">Zeke Zikey</h1>
                                 <h2 class="profile-title">Software Engineer & AI Specialist</h2>
@@ -544,12 +544,19 @@
         document.getElementById('downloadResume').addEventListener('click', function(e) {
             e.preventDefault();
             
+            // Create loading indicator
+            const loadingIndicator = document.createElement('div');
+            loadingIndicator.className = 'alert alert-info mt-3';
+            loadingIndicator.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Generating PDF, please wait...';
+            const downloadContainer = document.querySelector('.download-container');
+            downloadContainer.appendChild(loadingIndicator);
+            
             // Hide elements that should not be in the PDF
             const elementsToPrint = document.getElementById('resumeContent');
             const navbar = document.querySelector('.navbar');
             const footer = document.querySelector('.footer');
             const backToTop = document.querySelector('.back-to-top');
-            const downloadBtn = document.querySelector('.download-container');
+            const downloadBtn = document.querySelector('.btn-download');
             
             // Store original display values
             const navbarDisplay = navbar.style.display;
@@ -563,9 +570,141 @@
             backToTop.style.display = 'none';
             downloadBtn.style.display = 'none';
             
-            // Set options for PDF
+            // Prepare content for better rendering
+            const originalTransformValues = {};
+            const elementsWithTransform = elementsToPrint.querySelectorAll('[style*="transform"]');
+            elementsWithTransform.forEach((el, i) => {
+                originalTransformValues[i] = el.style.transform;
+                el.style.transform = 'none';
+            });
+            
+            // Force any lazy-loaded images to load
+            const images = elementsToPrint.querySelectorAll('img');
+            images.forEach(img => {
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                }
+                if (img.complete === false) {
+                    img.setAttribute('crossorigin', 'anonymous');
+                }
+            });
+            
+            // Enhanced options for PDF
             const opt = {
                 margin: [0.5, 0.5, 0.5, 0.5],
                 filename: 'Zeke_Zikey_Resume.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: {
+                    scale: 2, // Better resolution
+                    useCORS: true, // Allow loading of external images
+                    allowTaint: true, // Allow images from other domains
+                    logging: true, // Enable logging for debugging
+                    letterRendering: true,
+                    scrollX: 0,
+                    scrollY: 0
+                },
+                jsPDF: {
+                    unit: 'in',
+                    format: 'letter',
+                    orientation: 'portrait'
+                },
+                pagebreak: { mode: 'avoid-all' }
+            };
+            
+            // Try to generate PDF with improved error handling
+            html2pdf()
+                .set(opt)
+                .from(elementsToPrint)
+                .save()
+                .then(function() {
+                    console.log('PDF generated successfully');
+                    loadingIndicator.remove();
+                    
+                    // Restore original display values and transforms after PDF is generated
+                    setTimeout(() => {
+                        navbar.style.display = navbarDisplay || '';
+                        footer.style.display = footerDisplay || '';
+                        backToTop.style.display = backToTopDisplay || '';
+                        downloadBtn.style.display = downloadBtnDisplay || '';
+                        
+                        // Restore transform values
+                        elementsWithTransform.forEach((el, i) => {
+                            el.style.transform = originalTransformValues[i];
+                        });
+                    }, 1000);
+                })
+                .catch(function(error) {
+                    console.error('Detailed error generating PDF:', error);
+                    
+                    // Try fallback method if first method fails
+                    try {
+                        console.log('Trying fallback method for PDF generation');
+                        loadingIndicator.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Using alternative method...';
+                        
+                        // Alternative approach using window.print
+                        const printStyles = document.createElement('style');
+                        printStyles.innerHTML = `
+                            @media print {
+                                body * {
+                                    visibility: hidden;
+                                }
+                                #resumeContent, #resumeContent * {
+                                    visibility: visible;
+                                }
+                                #resumeContent {
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 100%;
+                                }
+                            }
+                        `;
+                        document.head.appendChild(printStyles);
+                        
+                        window.print();
+                        document.head.removeChild(printStyles);
+                        
+                        // Restore original display values after print dialog
+                        navbar.style.display = navbarDisplay || '';
+                        footer.style.display = footerDisplay || '';
+                        backToTop.style.display = backToTopDisplay || '';
+                        downloadBtn.style.display = downloadBtnDisplay || '';
+                        
+                        // Restore transform values
+                        elementsWithTransform.forEach((el, i) => {
+                            el.style.transform = originalTransformValues[i];
+                        });
+                        
+                        loadingIndicator.remove();
+                    } catch (fallbackError) {
+                        console.error('Fallback method also failed:', fallbackError);
+                        
+                        // Show error alert
+                        loadingIndicator.remove();
+                        const errorAlert = document.createElement('div');
+                        errorAlert.className = 'alert alert-danger mt-3';
+                        errorAlert.innerHTML = '<i class="fas fa-exclamation-circle me-2"></i> Error generating PDF. Please try saving as a webpage instead.';
+                        
+                        downloadContainer.appendChild(errorAlert);
+                        
+                        // Remove error alert after 5 seconds
+                        setTimeout(() => {
+                            errorAlert.remove();
+                        }, 5000);
+                        
+                        // Restore original display values if error occurs
+                        navbar.style.display = navbarDisplay || '';
+                        footer.style.display = footerDisplay || '';
+                        backToTop.style.display = backToTopDisplay || '';
+                        downloadBtn.style.display = downloadBtnDisplay || '';
+                        
+                        // Restore transform values
+                        elementsWithTransform.forEach((el, i) => {
+                            el.style.transform = originalTransformValues[i];
+                        });
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
