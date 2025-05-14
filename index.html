@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Zeke Zikey - Portfolio</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -276,8 +276,8 @@
             <div class="project-filter mb-5" data-aos="fade-up">
                 <ul class="filter-nav">
                     <li class="filter-item active" data-filter="all">All</li>
-                    <li class="filter-item" data-filter="web">Web Dev</li>
-                    <li class="filter-item" data-filter="data">Data Science</li>
+                    <li class="filter-item" data-filter="web">Web</li>
+                    <li class="filter-item" data-filter="data">Data</li>
                     <li class="filter-item" data-filter="ai">AI/ML</li>
                     <li class="filter-item" data-filter="other">Other</li>
                 </ul>
@@ -739,6 +739,18 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- Custom JavaScript -->
     <script src="js/script.js"></script>
+    <!-- Script addition to handle horizontal overflow -->
+    <script>
+        // Ensure page width is set properly for mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            function preventHorizontalOverflow() {
+                document.body.style.width = window.innerWidth + 'px';
+            }
+            
+            window.addEventListener('resize', preventHorizontalOverflow);
+            preventHorizontalOverflow();
+        });
+    </script>
 </body>
 
 </html>
