@@ -757,16 +757,58 @@
   
   .timeline-period {
     margin-top: 5px;
+    align-self: flex-start;
   }
   
   .skills-container, .projects-grid, .vision-cards, .soft-skills-container {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
   }
 
   .navbar-collapse {
     background-color: var(--resume-dark);
     padding: 15px;
     border-radius: 5px;
+  }
+  
+  /* Fix for better profile section viewing on tablets */
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .profile-name {
+    font-size: 1.6rem;
+  }
+  
+  .profile-title {
+    font-size: 0.9rem;
+  }
+  
+  /* Better spacing for mobile navigation */
+  .navbar {
+    padding: 10px 0;
+  }
+  
+  .navbar-toggler {
+    padding: 4px 8px;
+  }
+  
+  /* More space-efficient contact list */
+  .contact-list li {
+    margin-bottom: 10px;
+  }
+  
+  .icon-container {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  /* Optimize download button placement */
+  .download-container {
+    margin-bottom: 20px;
+    text-align: center;
   }
 }
 
@@ -775,34 +817,175 @@
     padding: 20px 15px;
   }
   
+  .sidebar-container {
+    padding: 20px 15px;
+  }
+  
   .block-title {
     font-size: 1.5rem;
+    margin-bottom: 20px;
   }
   
   .vision-cards, .soft-skills-container {
     grid-template-columns: 1fr;
   }
-}
-
-@media (max-width: 575.98px) {
+  
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Make timeline easier to read on mobile */
   .timeline {
     padding-left: 25px;
   }
   
   .timeline-marker {
     left: -25px;
+    width: 12px;
+    height: 12px;
+  }
+  
+  .timeline-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .timeline-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  /* Make the sidebar sections more compact */
+  .sidebar-section {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Adjust language section for better mobile view */
+  .language-item {
+    margin-bottom: 15px;
+  }
+  
+  .language-info {
+    margin-bottom: 5px;
+  }
+  
+  /* Better tap targets for mobile */
+  .interest-item, .skill-tag, .project-tag {
+    margin-bottom: 5px;
+    padding: 8px 12px;
+  }
+  
+  /* Better spacing and font size for resume sections */
+  .resume-block {
+    margin-bottom: 30px;
+  }
+  
+  .resume-section {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+  
+  /* Adjust project cards for mobile */
+  .project-card {
+    padding: 15px;
+  }
+  
+  .project-header h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .timeline {
+    padding-left: 20px;
+  }
+  
+  .timeline-marker {
+    left: -20px;
+    width: 10px;
+    height: 10px;
   }
   
   .skills-container, .projects-grid {
     grid-template-columns: 1fr;
   }
+  
+  /* Center profile on small screens */
+  .profile-section {
+    margin-bottom: 25px;
+  }
+  
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+  }
+  
+  .profile-name {
+    font-size: 1.4rem;
+  }
+  
+  /* Make language progress bars more visible */
+  .language-progress .progress {
+    height: 8px;
+  }
+  
+  /* Make interests section wrap better */
+  .interest-items {
+    justify-content: center;
+  }
+  
+  .interest-item {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+  
+  /* Better button sizing */
+  .btn-download {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  /* Make skill tags wrap better */
+  .skill-tags {
+    gap: 5px;
+  }
+  
+  .skill-tag {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+  
+  /* Adjust the soft skills section */
+  .sidebar-skill-item {
+    padding: 8px 10px;
+  }
+  
+  .skill-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+  }
+  
+  .skill-name {
+    font-size: 0.9rem;
+  }
 }
 
-/* Animation for content */
-[data-aos] {
-  pointer-events: none;
+/* Add vertical spacing utility classes for better mobile layout */
+.mb-sm-3 {
+  margin-bottom: 1rem !important;
 }
 
-[data-aos].aos-animate {
-  pointer-events: auto;
+.mb-sm-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+@media (max-width: 767.98px) {
+  .mb-md-0 {
+    margin-bottom: 0 !important;
+  }
 }
